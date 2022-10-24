@@ -13,8 +13,11 @@ function factorial(n) {
 
 //длина самого длинного слова
 function string(str) {
-  let a = str.split(" ");
+  // Наименование переменной делай более осмысленно, пусть оно будет большое по типу formattedArray или просто array, но зато в дальнейшем будет понятно что это
+  // почему переменная let?
+  let a = str.split(" "); 
   let result = 0;
+  // Выполнить перебор массива с помощью метода массива из ES6
   for (let i = 0; i < a.length; i++) {
     if (a[i].length > result) {
       result = a[i].length;
@@ -31,6 +34,7 @@ function getNumberMaxArray(arr) {
   let maxNumber = 0;
   let tempNumber = 0;
   const newArray = [];
+  // Выполнить перебор массива с помощью метода массива из ES6
   for (let i = 0; i < arr.length; i++) {
     for (let j = 0; j < arr[i].length; j++) {
       tempNumber = arr[i][j];
@@ -49,7 +53,7 @@ function getNumberMaxArray(arr) {
 // аргумент) и возвращает обрезанную строку с «…» в конце.
 
 function cutString(str, number) {
-  let result = "";
+  let result = ""; // Что за переменная?
   if (str.length > number) {
     return str.slice(0, number) + "...";
   }
@@ -59,8 +63,10 @@ function cutString(str, number) {
 // 5. Написать функцию, которая на вход принимает строку и возвращает эту строку в
 // формате: каждое слово начинается с заглавной буквы, остальные в нижнем регистре.
 
+// Еще разок посмотреть на задание и проверить строку типа: "ТеСт тесТ тЕСТ"
 function upperCaseString(str) {
   let a = str.split(" ");
+  /// Выполнить перебор массива с помощью метода массива из ES6
   for (let i = 0; i < a.length; i++) {
     a[i] = a[i][0].toUpperCase() + a[i].split(1);
   }
@@ -74,7 +80,8 @@ function upperCaseString(str) {
 //3, 5].
 
 function copyArray(oneArray, twoArray, number) {
-  let newArray = twoArray.slice();
+  //Почему переменная let?
+  let newArray = twoArray.slice();// Посмотреть что такое spread 
   newArray.splice(number, 0, ...oneArray);
   return newArray;
 }
@@ -90,6 +97,7 @@ function trueArray(arr) {
 //Функция должна вернуть true, если строка в первом элементе массива содержит все
 //буквы строки во втором элементе массива (регистр игнорируется).
 
+//(регистр игнорируется) не увидел этого функционала
 function stringArray(arr) {
   for (let i = 0; i < arr[1].length; i++) {
     if (!arr[0].includes(arr[1][i])) {
@@ -104,6 +112,7 @@ function stringArray(arr) {
 //вернуть их в виде двумерного массива.
 
 function splittingArray(arr, number) {
+  //Почему переменная let?
   let newArray = [];
   while (arr.length > 0) {
     newArray.push(arr.splice(0, number));
